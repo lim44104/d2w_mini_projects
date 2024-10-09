@@ -16,7 +16,7 @@ def generate():
 	# convert the items into one single string 
 	# the number should be separated by a comma
 	# and a full stop should end the string.
-	array_str = ', '.join(map(str, array)) + '.'
+	array_str = ', '.join(map(str, array))
 
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
@@ -34,9 +34,20 @@ def sortnumber1():
 		- call your sort function, either bubble sort or insertion sort
 		- create a string of the sorted numbers and store it in array_str
 	'''
-	array_str = generate()
-	insertion_sort(array_str)
-	
+
+	# Get the innerHTML of the "generate" div, which contains the numbers as a string
+	value = document.getElementById("generate").innerHTML
+    
+    # Create a list of integers from the string of numbers
+	numbers = [int(num.strip()) for num in value.split(',')]
+
+    # Sort the numbers using insertion sort
+	insertion_sort(numbers)
+
+	# Convert the sorted list back into a comma-separated string
+	array_str = ','.join(map(str, numbers))
+
+    # Update the "sorted" div with the sorted numbers
 	document.getElementById("sorted").innerHTML = array_str
 
 
@@ -49,7 +60,7 @@ def insertion_sort(array):  # insertion sort v2, with temp  # O(n**2)
             array[inner_i] = array[inner_i - 1]     # shift bigger item to the right
             inner_i -= 1    # shift inner_i to the left
         array[inner_i] = temp   # insert temp into final position (sorted)
-		
+
 
 
 def sortnumber2():
