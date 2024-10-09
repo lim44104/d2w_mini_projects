@@ -1,6 +1,93 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <style>
+            /* General body styling */
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            /* Title styling */
+            h1 {
+                font-size: 2.5em;
+                color: #4CAF50;
+                margin-bottom: 10px;
+            }
+
+            /* Paragraph text */
+            p {
+                font-size: 1.1em;
+                line-height: 1.6;
+                max-width: 600px;
+                text-align: center;
+            }
+
+            /* Buttons */
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+                border-radius: 5px;
+                margin: 10px 0;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+            /* Links */
+            a {
+                font-size: 1.1em;
+                color: #4CAF50;
+                text-decoration: none;
+                margin-top: 20px;
+                display: inline-block;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            /* Divs for generating and sorting results */
+            #generate{
+                background-color: #e0e0e0;
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+                width: 100%;
+                max-width: 400px;
+                text-align: center;
+                font-size: 1.2em;
+                border-radius: 5px;
+            }
+
+            #sorted {
+                background-color: #e0e0e0;
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+                width: auto;  /* Let the width adjust automatically */
+                max-width: 90%;  /* Set a max-width to prevent overflow */
+                text-align: center;
+                font-size: 1.2em;
+                border-radius: 5px;
+                word-wrap: break-word;  /* Break long content to a new line */
+                overflow-wrap: break-word;
+            }
+        </style>
         <script type="module">import * as library from './static/__target__/library.js'; window.library = library;</script>
     </head>
     <body>

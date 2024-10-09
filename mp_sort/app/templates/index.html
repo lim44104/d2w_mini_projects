@@ -1,6 +1,74 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <style>
+            /* General body styling */
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            /* Title styling */
+            h1 {
+                font-size: 2.5em;
+                color: #4CAF50;
+                margin-bottom: 10px;
+            }
+
+            /* Paragraph text */
+            p {
+                font-size: 1.1em;
+                line-height: 1.6;
+                max-width: 600px;
+                text-align: center;
+            }
+
+            /* Links in the list */
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                margin: 10px 0;
+            }
+
+            a {
+                font-size: 1.2em;
+                color: #4CAF50;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: #45a049;
+            }
+
+            /* Buttons (if needed in future) */
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+                border-radius: 5px;
+                margin: 10px 0;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
         <script type = "text/javascript">
             if (!("/x".includes(document.location.toString().slice(-1)))) document.location += "/"
         </script>
