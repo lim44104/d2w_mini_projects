@@ -20,6 +20,7 @@ def generate():
 
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
+	# test
 	document.getElementById("generate").innerHTML = array_str
 
 
