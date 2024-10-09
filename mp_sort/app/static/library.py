@@ -34,11 +34,23 @@ def sortnumber1():
 		- call your sort function, either bubble sort or insertion sort
 		- create a string of the sorted numbers and store it in array_str
 	'''
-	pass
-
-	array_str = None
+	array_str = generate()
+	insertion_sort(array_str)
 	
 	document.getElementById("sorted").innerHTML = array_str
+
+
+def insertion_sort(array):  # insertion sort v2, with temp  # O(n**2)
+    n = len(array)
+    for outer_i in range(1, n):     # from 1 to n-1 inclusive
+        inner_i = outer_i   # start with i-th element
+        temp = array[inner_i]
+        while (inner_i > 0) and (temp < array[inner_i - 1]):    # compares index to its left
+            array[inner_i] = array[inner_i - 1]     # shift bigger item to the right
+            inner_i -= 1    # shift inner_i to the left
+        array[inner_i] = temp   # insert temp into final position (sorted)
+		
+
 
 def sortnumber2():
 	'''	This function is used in Exercise 2.
