@@ -39,6 +39,15 @@ def questions():
 		question = Question(expression=form.expression.data)
 		evalans = EvaluateExpression(form.expression.data)
 		question.answer = evalans.evaluate()
+
+		if question.answer == None:
+			flash('Division by Zero Error!')
+			questions = current_user.questions.all()
+			return render_template('questions.html', title='Questions', 
+							user=current_user,
+							questions=questions,
+							form=form, prefix=prefix)
+
 		question.author = current_user.id 
 		challenge = Challenge(question=question)
 		username_to = []

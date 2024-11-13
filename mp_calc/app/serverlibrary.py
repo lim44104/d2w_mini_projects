@@ -57,7 +57,7 @@ class Stack:
         """Remove and return the item from the top of the stack. Raises an error if the stack is empty."""
         if not self.is_empty():
             return self.items.pop()
-        raise IndexError("pop from an empty stack")
+        ##raise IndexError("pop from an empty stack")
 
     def peek(self):
         """Return the item on the top of the stack without removing it."""
@@ -87,17 +87,27 @@ class EvaluateExpression:
         return 0
 
     def apply_operator(self, operands, operator):
-        """Apply the operator to the top two operands in the stack."""
-        right = operands.pop()
-        left = operands.pop()
-        if operator == '+':
-            operands.push(left + right)
-        elif operator == '-':
-            operands.push(left - right)
-        elif operator == '*':
-            operands.push(left * right)
-        elif operator == '/':
-            operands.push(left / right)
+        try:
+            """Apply the operator to the top two operands in the stack."""
+            right = operands.pop()
+            left = operands.pop()
+            if operator == '+':
+                operands.push(left + right)
+            elif operator == '-':
+                operands.push(left - right)
+            elif operator == '*':
+                operands.push(left * right)
+            elif operator == '/':
+                if right == 0:
+                    # console.log("Divide by 0")
+                    # window.alert("Zero Division Error, denominator is set to 1")
+                    # right = 1
+                    # raise ValueError("Division by zero encountered in expression. Denominator has been replace to 1")
+                    return None
+                else:
+                    operands.push(left / right)
+        except:
+            pass
 
     def to_postfix(self):
         """Convert the infix expression to postfix notation."""
@@ -155,8 +165,12 @@ class EvaluateExpression:
 
     def evaluate(self):
         """Evaluate the infix expression."""
-        postfix = self.to_postfix()
-        return self.evaluate_postfix(postfix)
+        try:
+            postfix = self.to_postfix()
+            return self.evaluate_postfix(postfix)
+        except ValueError as e:
+            window.alert("ERROR")
+            return str(e)
 
 
 
